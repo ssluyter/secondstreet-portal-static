@@ -147,56 +147,85 @@ body{font-family:'Montserrat',sans-serif;background:#F4F6FB;color:#161E5B;min-he
 .zip-wrap{position:relative;}
 .zip-spinner{display:none;position:absolute;right:12px;top:11px;width:16px;height:16px;border:2px solid #DDE3F2;border-top-color:#1F58FB;border-radius:50%;animation:spin .7s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
-/* Mobile responsive — Sprint 0: toggle elements hidden on desktop */
+/* Mobile fix — Sprint 0 revision: toggle elements hidden on desktop */
 .p-mob-toggle{display:none;}
 .p-mob-summary-bar{display:none;}
 @media (max-width:768px){
-/* Mobile responsive — Sprint 0: header */
+/* Mobile fix — Sprint 0 revision: header */
 .p-header{padding:0 16px;}
 .p-header-contact{display:none;}
 .p-header-right{gap:10px;}
 .p-discard{padding:6px 10px;font-size:11px;}
-/* Mobile responsive — Sprint 0: product bar */
+/* Mobile fix — Sprint 0 revision: product bar */
 .p-product-bar{padding:10px 16px;flex-wrap:wrap;gap:6px;}
 .p-product-name{font-size:12px;white-space:normal;}
-/* Mobile responsive — Sprint 0: step rail */
+/* Mobile fix — Sprint 0 revision: step rail */
 .p-step-rail{padding:0 12px;}
 .p-step{min-height:44px;font-size:10px;padding:10px 10px 10px 0;}
 .p-step-num{width:18px;height:18px;font-size:9px;}
-/* Mobile responsive — Sprint 0: sidebar hidden, collapsible summary */
+/* Mobile fix — Sprint 0 revision: sidebar hidden, collapsible summary */
 .p-mob-summary-bar{display:flex;align-items:center;justify-content:space-between;background:#161E5B;color:#fff;padding:12px 16px;font-size:13px;font-weight:600;cursor:pointer;user-select:none;min-height:44px;border-bottom:1px solid rgba(255,255,255,.08);font-family:'Montserrat',sans-serif;}
 .p-mob-chev{display:inline-block;transition:transform .2s ease;font-size:14px;line-height:1;}
 .p-mob-toggle:checked ~ .p-mob-summary-bar .p-mob-chev{transform:rotate(180deg);}
 .p-sidebar{display:none;}
 .p-mob-toggle:checked ~ .p-body .p-sidebar{display:flex;width:100%;border-right:none;border-bottom:1px solid #E2E8F4;padding:16px;}
-/* Mobile responsive — Sprint 0: body stacks vertically */
+/* Mobile fix — Sprint 0 revision: body stacks vertically */
 .p-body{flex-direction:column;}
-/* Mobile responsive — Sprint 0: form area */
+/* Mobile fix — Sprint 0 revision: form area + section spacing */
 .p-form{padding:16px;max-width:100%;}
-.p-grid{grid-template-columns:1fr;gap:12px;}
 .p-page-title{font-size:22px;}
-/* Mobile responsive — Sprint 0: inputs — 16px prevents iOS auto-zoom, 44px touch target */
-.p-input,.p-select,.p-phone-code,.p-locked{font-size:16px;height:44px;}
-textarea.p-input{font-size:16px;min-height:88px;height:auto;}
-.p-radio{min-height:44px;font-size:14px;}
+.p-page-sub{margin-bottom:18px;}
+.p-section-title{margin-bottom:10px;padding-bottom:6px;}
+.p-group{margin-bottom:20px;}
+/* Mobile fix — Sprint 0 revision: force single-column grid + full-width fields */
+.p-grid{grid-template-columns:1fr !important;gap:12px;}
+.p-field{width:100%;}
+.p-field.span2{grid-column:span 1;}
+/* Mobile fix — Sprint 0 revision: Basic Information field reorder (flex + order) */
+.p-grid-basic{display:flex;flex-direction:column;}
+.p-grid-basic > .p-field:nth-child(1){order:1;}
+.p-grid-basic > .p-field:nth-child(2){order:4;}
+.p-grid-basic > .p-field:nth-child(3){order:2;}
+.p-grid-basic > .p-field:nth-child(4){order:5;}
+.p-grid-basic > .p-field:nth-child(5){order:3;}
+.p-grid-basic > .p-field:nth-child(6){order:6;}
+.p-grid-basic > .p-field:nth-child(7){order:7;}
+.p-grid-basic > .p-field:nth-child(8){order:8;}
+.p-grid-basic > .p-field:nth-child(9){order:9;}
+.p-grid-basic > .p-field:nth-child(10){order:10;}
+.p-grid-basic > .p-field:nth-child(11){order:11;}
+/* Mobile fix — Sprint 0 revision: inputs 48px, 16px prevents iOS zoom, full-width */
+.p-input,.p-select,.p-phone-code,.p-locked{font-size:16px;height:48px;width:100%;box-sizing:border-box;}
+textarea.p-input{font-size:16px;min-height:96px;height:auto;}
+.p-radio{min-height:48px;font-size:14px;}
 .p-decl{flex-direction:column;align-items:stretch;gap:10px;}
 .p-decl-btns{justify-content:flex-end;}
 .p-decl-btn{min-height:40px;padding:8px 14px;font-size:13px;}
-.p-phone-code{min-width:88px;}
-/* Mobile responsive — Sprint 0: navigation full-width, back above next */
+/* Mobile fix — Sprint 0 revision: phone row sizing */
+.p-phone-row{flex-wrap:wrap;gap:8px;}
+.p-phone-code{min-width:110px;width:110px;height:48px;}
+.p-phone-num{flex:1;min-width:0;}
+.p-phone-num .p-input{width:100%;}
+/* Mobile fix — Sprint 0 revision: navigation full-width, 48px */
 .p-nav{flex-direction:column-reverse;gap:12px;align-items:stretch;}
-.p-btn-back{width:100%;min-height:44px;font-size:14px;text-align:center;}
-.p-btn-next{width:100%;min-height:44px;font-size:14px;justify-content:center;}
+.p-btn-back{width:100%;height:48px;font-size:15px;text-align:center;}
+.p-btn-next{width:100%;height:48px;font-size:15px;justify-content:center;}
 .p-autosave{justify-content:center;}
-/* Mobile responsive — Sprint 0: modal scrollable on small viewports */
+/* Mobile fix — Sprint 0 revision: modal scrollable */
 .p-modal-overlay{padding:16px;align-items:flex-start;}
 .p-modal{width:100%;max-width:100%;max-height:90vh;overflow-y:auto;padding:20px;}
-.p-modal-btn{min-height:44px;}
-/* Mobile responsive — Sprint 0: footer stacks */
+.p-modal-btn{min-height:48px;}
+/* Mobile fix — Sprint 0 revision: footer stacks */
 .p-footer{padding:22px 16px 18px;}
 .p-footer-top{flex-direction:column;gap:20px;}
 .p-footer-cols{flex-direction:column;gap:20px;}
 .p-footer-disclaimer{font-size:10px;}
+}
+/* Mobile fix — Sprint 0 revision: very small screens (<390px) stack phone code above number */
+@media (max-width:390px){
+.p-phone-row{flex-direction:column;}
+.p-phone-code{width:100%;min-width:0;}
+.p-phone-num{width:100%;flex-basis:100%;}
 }
 </style>
 </head>
@@ -991,7 +1020,7 @@ function coApplicantInfo(n) {
     ?[{v:'',l:'Select...'},{v:'canadian',l:'Canadian Resident'},{v:'none',l:'None'}]
     :[{v:'',l:'Select...'},{v:'us_citizen',l:'U.S. Citizen'},{v:'us_pr',l:'U.S. Permanent Resident'},{v:'none',l:'None'}];
   let h=coSectionHeader(n);
-  h+='<div class="p-group"><div class="p-section-title">Basic Information</div><div class="p-grid">'
+  h+='<div class="p-group"><div class="p-section-title">Basic Information</div><div class="p-grid p-grid-basic">'
     +coInp(n,'firstName','First Name','text','','',true)
     +coInpDate(n,'dob','Date Of Birth','',true,'',false)
     +coInp(n,'middleName','Middle Name','text','','',false)
@@ -1180,7 +1209,7 @@ function step0() {
     :[{v:'',l:'Select...'},{v:'us_citizen',l:'U.S. Citizen'},{v:'us_pr',l:'U.S. Permanent Resident'},{v:'none',l:'None'}];
   let h='<div class="p-page-title">Applicant Information</div>'
     +'<div class="p-page-sub">Please provide a few details to help us process your request.</div>'
-    +'<div class="p-group"><div class="p-section-title">Basic Information</div><div class="p-grid">'
+    +'<div class="p-group"><div class="p-section-title">Basic Information</div><div class="p-grid p-grid-basic">'
     +inp('firstName','First Name','text','','',true)
     +inpDate('dob','Date Of Birth','',true,'',false)
     +inp('middleName','Middle Name','text','','',false)
